@@ -15,7 +15,7 @@ export default class AddHabit extends Component {
     const { habit_name } = e.target;
 
     HabitsApiService.postHabit(habit_name.value)
-    .then(this.context.addHabit(habit_name.value))
+    .then(res=>this.context.setHabitList(res))
     .then(this.props.history.push('/habits'))
       .catch(this.context.setError);
   };

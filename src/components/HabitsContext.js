@@ -9,7 +9,6 @@ const HabitsContext = React.createContext({
   setError: () => {},
   clearError: () => {},
   setHabitList:()=>{},
-  addHabit:()=>{},
   editHabit:()=>{}
 
 })
@@ -44,13 +43,6 @@ export  class HabitsContextProvider extends Component {
     this.setState({ habitList })
   }
 
-  addHabit = habit => {
-    this.setHabitList([
-      ...this.state.habitList,
-      habit
-    ])
-  }
-
   editHabit = habitList =>{
     this.setState({ habitList })
   }
@@ -64,7 +56,7 @@ export  class HabitsContextProvider extends Component {
       setError: this.setError,
       clearError: this.clearError,
       setHabitList:this.setHabitList,
-      addHabit:this.addHabit
+      
     }
     return (
       <div>

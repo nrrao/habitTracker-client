@@ -36,7 +36,7 @@ const HabitsApiService = {
       )
   },
 
-  updateHabit(habitTitle,percentage){
+  updateHabit(habitTitle,habitId){
     return fetch(`${config.API_ENDPOINT}/habits`, {
       method: 'PATCH',
       headers: {
@@ -44,8 +44,9 @@ const HabitsApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
+        habit_id:habitId,
         habit_title: habitTitle,
-        percentage:percentage,
+        
       }),
     })
       .then(res =>

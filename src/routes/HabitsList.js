@@ -33,14 +33,14 @@ export default class HabitsList extends Component {
   renderHabits() {
     const { habitList = [] } = this.context;
     console.log(habitList);
-    return habitList.map(habit =>
+    return habitList.map((habit, idx) =>
       <Habits
-        key={habit.id}
+        key={idx}
+        habitId={habit.habit_id}
         title={habit.habit_title}
         date={habit.dates.map(date=>date.date_added)}
+        dateId={habit.dates.map(dateId=>dateId.date_id)}
         percentage={habit.dates.map(percentage=>percentage.percentage)}
-        
-        
       />
     );
   }
