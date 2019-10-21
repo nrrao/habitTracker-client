@@ -18,7 +18,6 @@ export default class Header extends Component {
   };
 
   renderLogoutLink() {
-    console.log("inside logout header");
     return (
       <div className="Header__logged-in">
         <Link to="/habits">Habits</Link>
@@ -43,7 +42,6 @@ export default class Header extends Component {
     );
   }
   render() {
-    console.log("***************** render");
     return (
       <nav className="Header">
         <h1>

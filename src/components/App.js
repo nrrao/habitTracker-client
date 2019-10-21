@@ -49,8 +49,6 @@ export default class App extends Component {
               component={AddHabit}
               />
         </Switch> 
-       
-        
         </main>
       </div>
      

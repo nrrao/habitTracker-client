@@ -13,7 +13,6 @@ export default class HabitsList extends Component {
   };
 
   addHabit = () => {
-    
     const { history } = this.props;
     history.push("/addhabit");
   };
@@ -21,10 +20,8 @@ export default class HabitsList extends Component {
   componentDidMount() {
     this.context.clearError();
     HabitsApiService.getHabitsList()
-
       .then(res => {
-        console.log(res);
-        console.log(this.context);
+        console.log(res)
         this.context.setHabitList(res);
       })
       .catch(this.context.setError);

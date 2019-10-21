@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import AuthApiService from '../services/auth-api-service'
 
 
 export default class RegistrationForm extends Component {
@@ -12,13 +13,21 @@ export default class RegistrationForm extends Component {
     ev.preventDefault()
     const { user_name, password } = ev.target
 
-    console.log('SignUp form submitted')
-    console.log({ user_name, password })
+          this.setState({ error: null })
+          AuthApiService.postUser({
+            user_name: user_name.value,
+            password: password.value,
+            
+          })
+    .then(user =>{
+      user_name.value = ''
+      password.value = ''
+      this.props.onSignUpSuccess()
+    })
+    .catch(res=>{
+      this.setState({error:res.error})
+    })
 
-
-    user_name.value = ''
-    password.value = ''
-    this.props.onSignUpSuccess()
   }
 
   render() {
@@ -26,32 +35,31 @@ export default class RegistrationForm extends Component {
     return (
       <form
         className='SignUpForm'
-        onSubmit={this.handleSubmit}
-      >
+        onSubmit={this.handleSubmit}>
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
         
         <div className='user_name'>
-          <label htmlFor='RegistrationForm__user_name'>
+          <label htmlFor='SignUp__user_name'>
             User name 
           </label>
           <input
             name='user_name'
             type='text'
             required
-            id='RegistrationForm__user_name'>
+            id='SignUpForm__user_name'>
           </input>
         </div>
         <div className='password'>
-          <label htmlFor='RegistrationForm__password'>
+          <label htmlFor='SignUp__password'>
             Password 
           </label>
           <input
             name='password'
             type='password'
             required
-            id='RegistrationForm__password'>
+            id='SignUpForm__password'>
           </input>
         </div>
         

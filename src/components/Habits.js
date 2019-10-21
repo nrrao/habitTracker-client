@@ -22,29 +22,37 @@ export default class Habits extends Component {
     })
   }
 
-  updateValue = (habitId) => {
+  updateValue = (habitId,dateArr) => {
     
     const habitTitle = this.refs.habitTitle.value;
-    // const percentage0 =this.refs.percentage0.value;
-    // const percentage1 =this.refs.percentage1.value;
-    // const percentage2 =this.refs.percentage2.value;
-    // const percentage3 =this.refs.percentage3.value;
-    // const percentage4 =this.refs.percentage4.value;
-    HabitsApiService.updateHabit(habitTitle,habitId)
+    const percentArr = [this.refs.percentage0.value,
+                        this.refs.percentage1.value,
+                        this.refs.percentage2.value,
+                        this.refs.percentage3.value,
+                        this.refs.percentage4.value];
+                    
+    HabitsApiService.updateHabit(habitTitle,habitId,percentArr,dateArr)
       .then(res=>this.context.setHabitList(res))
       .then(this.props.history.push("/habits"))
       .catch(this.context.setError);
       this.setState({isInEditMode:false})
   };
 
+  deleteHabitRequest=(e)=>{
+    console.log(e.target.id);
+    HabitsApiService.deleteHabit(e.target.id)
+    .then(res=>this.context.setHabitList(res))
+  }
+
   renderEditView=()=>{
-    const { habitId,title,percentage,date} = this.props;
+    const { habitId,title,percentage,dateId} = this.props;
+    console.log(this.props)
     return(
       <div>
       <div>
         <input  ref='habitTitle' type="text" defaultValue={title}/>
         <button onClick={this.changeEditMode}>x</button>
-        <button onClick={()=>this.updateValue(habitId,date)}>ok</button>
+        <button onClick={()=>this.updateValue(habitId,dateId)}>ok</button>
         </div>
         <div>
         <input  ref='percentage0' type="text" defaultValue={percentage[0]}/>
@@ -60,7 +68,8 @@ export default class Habits extends Component {
   }
 
   renderDefaultView=()=>{
-    const { title,percentage} = this.props;
+    const { title,percentage,habitId} = this.props;
+    console.log(habitId)
     return <div>
       <ul>
         <li onClick={this.changeEditMode}>{title}</li>
@@ -69,7 +78,7 @@ export default class Habits extends Component {
         <li >{percentage[2]}</li>
         <li>{percentage[3]}</li>
         <li>{percentage[4]}</li>
-    
+      <button id={habitId} onClick={(e)=>this.deleteHabitRequest(e)}>Delete</button>
       </ul>
     </div>
   }
