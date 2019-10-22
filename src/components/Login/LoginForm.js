@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import TokenService from '../services/token-service'
-import AuthApiService from '../services/auth-api-service'
-import HabitsContext from './HabitsContext';
+import TokenService from '../../services/token-service'
+import AuthApiService from '../../services/auth-api-service'
+import HabitsContext from '../HabitsContext';
+import './Login.css'
 
 
 export default class LoginForm extends Component {
@@ -34,19 +35,23 @@ handleSubmitJwtAuth = (ev) =>{
   }
   render() {
     return (
+      
+        
       <form onSubmit={this.handleSubmitJwtAuth}>
+        
+        <ul className="wrapper">
         <h2>Enter Username and Password to Login</h2>
-        <div>
+        <li className="form-row">
         <label htmlFor='LoginForm__user_name'>
-            User name
+            Username
           </label>
           <input
             required
             name='user_name'
-            id='LoginForm__user_name'>
+            id='LoginForm__user_name' className="input">
           </input>
-          </div>
-          <div className='password'>
+          </li>
+          <li className="form-row">
           <label htmlFor='LoginForm__password'>
             Password
           </label>
@@ -54,14 +59,18 @@ handleSubmitJwtAuth = (ev) =>{
             required
             name='password'
             type='password'
-            id='LoginForm__password'>
+            id='LoginForm__password' className="input">
           </input>
-        </div>
-        <button type='submit'>
+        </li>
+        <li className="form-row">
+        <button className="button" type='submit'>
           Login
         </button>
-        
+        </li>
+        </ul>
         </form>
+        
+       
     )
   }
 }

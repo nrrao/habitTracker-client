@@ -34,7 +34,7 @@ const HabitsApiService = {
       )
   },
 
-  updateHabit(habitTitle,habitId,percentArr,dateIdArr){ 
+  updateHabit(habitTitle,habitId,percentArr,dateIdArr,dates){ 
     const obj =  {
       'habit_id': habitId,
       'habit_title': habitTitle,
@@ -42,7 +42,7 @@ const HabitsApiService = {
     };
     console.log(percentArr, dateIdArr);
     dateIdArr.forEach( (id, idx) => {
-      obj.dates.push( {'date_id' : id,'percentage':parseInt(percentArr[idx])} );
+      obj.dates.push( {'date_id' : id,'percentage':parseInt(percentArr[idx]),'date_added':dates[idx]} );
     });
 
     console.log(JSON.stringify(obj));
@@ -63,18 +63,24 @@ const HabitsApiService = {
   },
 
   deleteHabit(habitId){
-    fetch(config.API_ENDPOINT + `/habits/${habitId}`, {
+    return fetch(config.API_ENDPOINT + `/habits/${habitId}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`
       }
     })
-    .then(res => 
-      console.log(res.json()))
-      //res.json())
-  }
+    .then(res => res.json())
+    /*
+
+    .then(res => {
+      console.log(res.json());
+      return res.json();
+    })
+    */
+  
 
 }
+}
 
-export default HabitsApiService
+export default HabitsApiService;

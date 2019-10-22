@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import TokenService from "../services/token-service";
-import HabitsContext from './HabitsContext';
+import TokenService from "../../services/token-service";
+import HabitsContext from '../HabitsContext';
+import './Header.css';
 
 export default class Header extends Component {
 
@@ -19,8 +20,8 @@ export default class Header extends Component {
 
   renderLogoutLink() {
     return (
-      <div className="Header__logged-in">
-        <Link to="/habits">Habits</Link>
+      <div className="container">
+        
         <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>
@@ -30,25 +31,29 @@ export default class Header extends Component {
 
   renderLoginLink() {
     return (
-      <div className="Header__not-logged-in">
-        <Link to="/signup">SignUp</Link>
+      
+      <nav className="main-nav">
+        <ul className="main-nav-list">
+       <li> <Link to="/signup">SignUp</Link></li>
         <span>{"-"}</span>
-        <Link to="/login">Log in</Link>
-        {/* <Link
-          to='/addhabit'>
-          Add Habit
-        </Link> */}
-      </div>
+        <li> <Link to="/login">Log in</Link></li>
+        </ul>
+       </nav>
+       
     );
   }
   render() {
     return (
-      <nav className="Header">
-        <h1>
-          <Link to="/">Habit Tracker</Link>
-        </h1>
+      <header className="main-header">
+      <div className="container">
+      
+       <h1><Link  to="/">Habit Tracker</Link></h1>
+          
+        
         {this.context.isLoggedIn ? this.renderLogoutLink() : this.renderLoginLink()}
-      </nav>
+      
+      </div>
+      </header>
     );
   }
 }

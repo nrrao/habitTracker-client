@@ -6,7 +6,7 @@ export default class HomePage extends Component {
       <div>
         
         <header className="App-header">
-          <h1>Ready To Track Your Habits</h1>
+          <h1 align="center">Ready To Track Your Habits</h1>
         </header>
 
          

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Route,Switch} from 'react-router-dom'
-import Header from './Header';
+import Header from './Header/Header';
 import PrivateRoute from '../components/Utilis/PrivateRoute';
 import PublicRoute from '../components/Utilis/PublicRoute';
 import HomePage from'./HomePage';

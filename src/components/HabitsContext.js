@@ -50,7 +50,7 @@ export  class HabitsContextProvider extends Component {
   }
 
   compareHabitDates = (hd1, hd2) => {
-    return hd1.date_added < hd2.date_added;
+    return hd1.date_added < hd2.date_added ? 1 : -1;
   }
   
   handleMissingValues = habitsListFromDb => {
@@ -68,7 +68,7 @@ export  class HabitsContextProvider extends Component {
         })
       
         if (!dateFound) { // create a new habit date with zero percentage and date_id of -1
-          dateToBeAdded = date;
+          dateToBeAdded = date.format('YYYY-MM-DD');
           habit.dates.push(
             {
               'date_id': -1,

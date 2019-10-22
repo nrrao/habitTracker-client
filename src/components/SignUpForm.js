@@ -33,14 +33,14 @@ export default class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
-      <form
-        className='SignUpForm'
-        onSubmit={this.handleSubmit}>
+      <form  onSubmit={this.handleSubmit}>
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
         
-        <div className='user_name'>
+        <ul class="wrapper">
+        <h2>SignUp To Trck Your Habits</h2>
+        <li class="form-row">
           <label htmlFor='SignUp__user_name'>
             User name 
           </label>
@@ -50,8 +50,8 @@ export default class RegistrationForm extends Component {
             required
             id='SignUpForm__user_name'>
           </input>
-        </div>
-        <div className='password'>
+        </li>
+        <li class="form-row">
           <label htmlFor='SignUp__password'>
             Password 
           </label>
@@ -61,11 +61,13 @@ export default class RegistrationForm extends Component {
             required
             id='SignUpForm__password'>
           </input>
-        </div>
-        
+        </li>
+        <li  class="form-row">
         <button type='submit'>
           SignUp
         </button>
+        </li>
+        </ul>
       </form>
     )
   }

@@ -10,6 +10,10 @@ export default class AddHabit extends Component {
     }
   };
 
+  cancelAdd=()=>{
+    this.props.history.push("/habits")
+  }
+  
   handleSubmit = e => {
     e.preventDefault();
     const { habit_name } = e.target;
@@ -27,6 +31,7 @@ export default class AddHabit extends Component {
           <label htmlFor="addHabit_name">Habit Title</label>
           <input required name="habit_name"></input>
           <button type="submit">Add</button>
+          <button onClick={this.cancelAdd}>X</button>
         </div>
       </form>
     );

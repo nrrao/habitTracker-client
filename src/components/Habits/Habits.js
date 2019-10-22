@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import HabitsContext from "./HabitsContext";
-
-import HabitsApiService from "../services/habits-api-service";
+import HabitsContext from "../HabitsContext";
+import HabitsApiService from "../../services/habits-api-service";
+import './Habit.css'
 
 
 export default class Habits extends Component {
@@ -22,7 +22,7 @@ export default class Habits extends Component {
     })
   }
 
-  updateValue = (habitId,dateArr) => {
+  updateValue = (habitId,dateArr,dates) => {
     
     const habitTitle = this.refs.habitTitle.value;
     const percentArr = [this.refs.percentage0.value,
@@ -31,7 +31,7 @@ export default class Habits extends Component {
                         this.refs.percentage3.value,
                         this.refs.percentage4.value];
                     
-    HabitsApiService.updateHabit(habitTitle,habitId,percentArr,dateArr)
+    HabitsApiService.updateHabit(habitTitle,habitId,percentArr,dateArr,dates)
       .then(res=>this.context.setHabitList(res))
       .then(this.props.history.push("/habits"))
       .catch(this.context.setError);
@@ -45,14 +45,14 @@ export default class Habits extends Component {
   }
 
   renderEditView=()=>{
-    const { habitId,title,percentage,dateId} = this.props;
+    const { habitId,title,percentage,dateId,date} = this.props;
     console.log(this.props)
     return(
       <div>
       <div>
         <input  ref='habitTitle' type="text" defaultValue={title}/>
         <button onClick={this.changeEditMode}>x</button>
-        <button onClick={()=>this.updateValue(habitId,dateId)}>ok</button>
+        <button onClick={()=>this.updateValue(habitId,dateId,date)}>ok</button>
         </div>
         <div>
         <input  ref='percentage0' type="text" defaultValue={percentage[0]}/>
@@ -71,13 +71,15 @@ export default class Habits extends Component {
     const { title,percentage,habitId} = this.props;
     console.log(habitId)
     return <div>
-      <ul>
-        <li onClick={this.changeEditMode}>{title}</li>
+      
+      <ul className="ulHabitlist">
+        <li>{title}</li>
         <li >{percentage[0]}</li>
         <li >{percentage[1]}</li>
         <li >{percentage[2]}</li>
         <li>{percentage[3]}</li>
         <li>{percentage[4]}</li>
+        <button onClick={this.changeEditMode}>Edit</button>
       <button id={habitId} onClick={(e)=>this.deleteHabitRequest(e)}>Delete</button>
       </ul>
     </div>
@@ -86,9 +88,11 @@ export default class Habits extends Component {
   render() {
     
     return (
+
       this.state.isInEditMode?
       this.renderEditView():
       this.renderDefaultView()
+      
     );
   }
 }

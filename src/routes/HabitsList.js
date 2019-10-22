@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import HabitsContext from "../components/HabitsContext";
 import HabitsApiService from "../services/habits-api-service";
-import Habits from "../components/Habits";
+import Habits from "../components/Habits/Habits";
 
 export default class HabitsList extends Component {
   static contextType = HabitsContext;
@@ -44,12 +44,22 @@ export default class HabitsList extends Component {
 
   render() {
     //const { error } = this.context
+    const dates =this.context.getDatesArray();
+    console.log('%%%%%%',dates)
     return (
       <section className="HabitListPage">
         <h1>HabitList</h1>
         <button type="button" onClick={e => this.addHabit()}>
           +
         </button>
+        <ul>
+          <li>Habits</li>
+        <li>{dates[0].format('ddd D')}</li>
+        <li>{dates[1].format('ddd D')}</li>
+        <li>{dates[2].format('ddd D')}</li>
+        <li>{dates[3].format('ddd D')}</li>
+        <li>{dates[4].format('ddd D')}</li>
+        </ul>
         {this.renderHabits()}
       </section>
     );

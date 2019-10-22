@@ -1,0 +1,32 @@
+body {
+	
+	font-family: arial;
+}
+.container {
+	width: 960px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color:#fff;
+  
+}
+
+.main-header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.main-nav ul {
+	margin: 1em 0 .5em;
+	text-align: center;
+}
+.main-nav li {
+	display: inline;
+}
+
+@media (min-width: 960px) {
+	.main-header .container {
+		justify-content: space-between;
+	}
+}
