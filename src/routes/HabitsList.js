@@ -13,7 +13,8 @@ export default class HabitsList extends Component {
     this.state = { showPopup: false };  
     }  
 
-    togglePopup=() =>{  
+    togglePopup=() =>{
+      
       this.setState({  
            showPopup: !this.state.showPopup  
       });  
@@ -57,24 +58,16 @@ export default class HabitsList extends Component {
   }
 
   render() {
-    //const { error } = this.context
+    // const { error } = this.context
     const dates =this.context.getDatesArray();
     console.log('%%%%%%',dates)
     return (
       <section className="HabitListPage">
-        {/* <h1>HabitList</h1> */}
+        {/* <h1>HabitList</h1>  */}
+        <div className="addNewHabitButtonDiv">
         <button className="addButton" onClick={()=>this.togglePopup()}> Add NewHabit</button>  
         {this.state.showPopup ? <AddHabit closePopUp={()=>this.togglePopup()}/>:null}
-        {/* <ul className="dateContainer">
-          <li className="date text"></li>
-        <li className="date text">{dates[0].format('ddd D')}</li>
-        <li className="date text">{dates[1].format('ddd D')}</li>
-        <li className="date text">{dates[2].format('ddd D')}</li>
-        <li className="date text">{dates[3].format('ddd D')}</li>
-        <li className="date text">{dates[4].format('ddd D')}</li>
-        <li className="date" ></li>
-        
-        </ul> */}
+        </div>
         {this.renderHabits()}
       </section>
     );

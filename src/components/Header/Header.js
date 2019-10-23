@@ -19,7 +19,6 @@ export default class Header extends Component {
 
   renderLogoutLink() {
     return (
- 
       <div className="Header__logged-in">
         <Link onClick={this.handleLogoutClick} to="/">
           Logout
@@ -27,37 +26,28 @@ export default class Header extends Component {
         <span className="hyph">{"-"}</span>
         <Link to="/habits">Habits</Link>
       </div>
-      
     );
   }
 
   renderLoginLink() {
     return (
-      
-  
-    
       <div className="Header__not-logged-in">
-
         <Link to="/signup">SignUp</Link>
         <span className="hyph">{"-"}</span>
         <Link to="/login">Log in</Link>
-      
       </div>
-     
     );
   }
   render() {
     return (
-      
-            <nav className="Header">
-      <h1>
-      <Link to="/">Habit Tracker</Link>
-    </h1>
+      <nav className="Header">
+        <h1>
+          <Link to="/">Habit Tracker</Link>
+        </h1>
 
         {this.context.isLoggedIn
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
-      
       </nav>
     );
   }

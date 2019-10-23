@@ -19,7 +19,7 @@ export default class AddHabit extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { habit_name } = e.target;
-
+console.log('********^^^^^^^^',habit_name.value)
     HabitsApiService.postHabit(habit_name.value)
     .then(res=>this.context.setHabitList(res))
     .then(this.props.history.push('/habits'))
@@ -30,17 +30,17 @@ export default class AddHabit extends Component {
     console.log(this.props)
     return (
       <div>
-      <form onSubmit={this.handleSubmit}>
+      <form className="addHabitDiv" onSubmit={this.handleSubmit}>
         
-        <div className="addHabit">
-          <label htmlFor="addHabit_name">Habit Title</label>
+        
+          <label className='addHabitLable' htmlFor="addHabit_name">New Habit Title</label>
           <input aria-label='add__newHabit_name' className="addHabitInput" required name="habit_name"></input>
           
          
           <button className="addButtonForm" type="submit">Add</button>
           <button className="addButtonForm" onClick={()=>this.props.closePopUp()}>Cancel</button>
          
-          </div> 
+          
         
       </form>
       

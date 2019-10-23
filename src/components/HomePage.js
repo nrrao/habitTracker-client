@@ -12,10 +12,10 @@ export default class HomePage extends Component {
   };
 
   showSignUp=()=>{
-    this.props.history.push("/login")
+    this.props.history.push("/signup")
   }
   showLogin=()=>{
-    this.props.history.push("/signup")
+    this.props.history.push("/login")
   }
   render() {
     return (
@@ -32,19 +32,19 @@ export default class HomePage extends Component {
         </div>
        
         <div className="danger colorList">
-  <p><strong>Exercise,Journal</strong>....100%</p>
+  <p><strong>Exercise-50%,Journal-100%</strong>....</p>
 </div>
 
 <div className="success colorList">
-  <p><strong>Success!</strong> ...</p>
+  <p><strong>Track Habits Everyday</strong> ...</p>
 </div>
 
 <div className="info colorList">
-  <p><strong>Keep Track</strong> ...</p>
+  <p><strong>Achieve Goals</strong> ...</p>
 </div>
 
 <div className="warning colorList">
-  <p><strong>Achieve Goals</strong> ...</p>
+  <p><strong> Success!</strong></p>
 </div>
 
       </div>
