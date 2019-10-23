@@ -1,17 +1,133 @@
-/* ul{
+.ulHabitlist{
   list-style-type:none;
-  width:75%;
-  margin:0;
   padding:0;
-  border:1px dotted red;
   display:flex;
-  align-self: center;
-  justify-content:space-around;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+  
+ }
+li{
+  list-style: none;
+}
+.liTitle{
+  padding-right:10px;
+  margin-top:10px;
+  padding-left:10px;
+  padding-top:20px;
+width:100%;
+height: 60px;
+background-color: #ffdddd;
+border-left: 6px solid #f44336;
 }
 
-li{
-  border:1px solid black;
-  margin:0.5em;
-  padding:0.5em;
-  flex:1;
+.liPercentage{
+  margin-top:10px;
+  height: 60px;
+  padding-top:20px;
+width: 20%;
+text-align: center;
+background-color: #e7f3fe;
+
+ }
+
+.liButton{
+  margin-top:10px;
+  width:100%;
+  text-align: center;
+  background-color: #ffffcc;
+ 
+  
+}
+
+.dateSpan{
+  margin-right:10px;
+}
+
+.text{
+ font-weight:bold;
+}
+
+.dateContainer{
+  /* border:1px solid red; */
+  
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.date{
+  margin-top:10px;
+  text-align: center;
+  width:20%;
+  background-color: #e7f3fe;
+  
+}
+
+/* .container{
+  max-width:50%;
+  display: flex;
+  flex-wrap: nowrap;
 } */
+
+.addButton{
+margin-left: 45%;
+margin-top: 20px;
+height: 35px;
+align-self: center;
+  background-color: #ddffdd;
+}
+
+.textContainer{
+  display:flex;
+ flex-direction: column;
+}
+.input{
+  text-align: center;
+  margin:10px;
+  font-size:16px;
+  height:35px;
+
+
+}
+.percentage{
+  text-align: center;
+  margin:10px;
+  font-size:16px;
+  height:35px;
+
+
+}
+
+.editbutton{
+ margin:5px;
+margin-left:60%;
+background-color: #ddffdd; 
+}
+
+.deleteButton{
+  font-size:16px;
+  margin:5px;
+  background-color: #ddffdd;
+}
+
+.updateButton{
+  font-size:16px;
+  margin:5px;
+  background-color: #ddffdd;
+}
+
+@media screen and (min-width: 450px) {
+.ulHabitlist{
+  width:75%;
+  margin:auto;
+}
+
+.textContainer{
+  display:flex;
+  flex-direction: row;
+  width:75%;
+  margin:auto;
+}
+}

@@ -38,9 +38,9 @@ handleSubmitJwtAuth = (ev) =>{
       
         
       <form onSubmit={this.handleSubmitJwtAuth}>
-        
-        <ul className="wrapper">
         <h2>Enter Username and Password to Login</h2>
+        <ul className="wrapper">
+        
         <li className="form-row">
         <label htmlFor='LoginForm__user_name'>
             Username
@@ -48,6 +48,7 @@ handleSubmitJwtAuth = (ev) =>{
           <input
             required
             name='user_name'
+            aria-label='LoginForm__user_name'
             id='LoginForm__user_name' className="input">
           </input>
           </li>

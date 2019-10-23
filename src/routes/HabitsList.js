@@ -2,9 +2,22 @@ import React, { Component } from "react";
 import HabitsContext from "../components/HabitsContext";
 import HabitsApiService from "../services/habits-api-service";
 import Habits from "../components/Habits/Habits";
+import '../components/Habits/Habit.css'
+import AddHabit from "../components/AddHabit";
 
 export default class HabitsList extends Component {
   static contextType = HabitsContext;
+
+  constructor(props){  
+    super(props);  
+    this.state = { showPopup: false };  
+    }  
+
+    togglePopup=() =>{  
+      this.setState({  
+           showPopup: !this.state.showPopup  
+      });  
+       }  
 
   static defaultProps = {
     history: {
@@ -12,8 +25,9 @@ export default class HabitsList extends Component {
     }
   };
 
-  addHabit = () => {
-    const { history } = this.props;
+  addHabit = (e) => {
+    e.preventDefault();
+     const { history } = this.props;
     history.push("/addhabit");
   };
 
@@ -48,18 +62,19 @@ export default class HabitsList extends Component {
     console.log('%%%%%%',dates)
     return (
       <section className="HabitListPage">
-        <h1>HabitList</h1>
-        <button type="button" onClick={e => this.addHabit()}>
-          +
-        </button>
-        <ul>
-          <li>Habits</li>
-        <li>{dates[0].format('ddd D')}</li>
-        <li>{dates[1].format('ddd D')}</li>
-        <li>{dates[2].format('ddd D')}</li>
-        <li>{dates[3].format('ddd D')}</li>
-        <li>{dates[4].format('ddd D')}</li>
-        </ul>
+        {/* <h1>HabitList</h1> */}
+        <button className="addButton" onClick={()=>this.togglePopup()}> Add NewHabit</button>  
+        {this.state.showPopup ? <AddHabit closePopUp={()=>this.togglePopup()}/>:null}
+        {/* <ul className="dateContainer">
+          <li className="date text"></li>
+        <li className="date text">{dates[0].format('ddd D')}</li>
+        <li className="date text">{dates[1].format('ddd D')}</li>
+        <li className="date text">{dates[2].format('ddd D')}</li>
+        <li className="date text">{dates[3].format('ddd D')}</li>
+        <li className="date text">{dates[4].format('ddd D')}</li>
+        <li className="date" ></li>
+        
+        </ul> */}
         {this.renderHabits()}
       </section>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AuthApiService from '../services/auth-api-service'
-
+import './Login/Login.css';
 
 export default class RegistrationForm extends Component {
   static defaultProps = {
@@ -37,32 +37,33 @@ export default class RegistrationForm extends Component {
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
+        <h2>SignUp To Track Your Habits</h2>
+        <ul className="wrapper">
         
-        <ul class="wrapper">
-        <h2>SignUp To Trck Your Habits</h2>
-        <li class="form-row">
+        <li className="form-row">
           <label htmlFor='SignUp__user_name'>
-            User name 
+            Username 
           </label>
           <input
-            name='user_name'
+          aria-label='SignUp__user_name'
             type='text'
             required
             id='SignUpForm__user_name'>
           </input>
         </li>
-        <li class="form-row">
+        <li className="form-row">
           <label htmlFor='SignUp__password'>
             Password 
           </label>
           <input
+          aria-label='SignUp__password'
             name='password'
             type='password'
             required
             id='SignUpForm__password'>
           </input>
         </li>
-        <li  class="form-row">
+        <li  className="form-row">
         <button type='submit'>
           SignUp
         </button>

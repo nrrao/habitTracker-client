@@ -1,31 +1,38 @@
-.grid-page{
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
+* {
+  box-sizing: border-box;
 }
 
-.grid-habit-list{
-
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.grid-habit-list-column{
-
+h1, h2 {
+  color: #222;
 }
 
-.grid-header{
 
+.blue {
+  color: #477ACC;
 }
 
-.grid-header-column{
-
+.yellow {
+  color: #EAC435;
 }
 
-.background-blue{
- ;
+.green {
+  color: #09a55e;
 }
 
-.black-text{
-
+.red {
+  color: #CA1551;
 }
 
-.white-text{
- color:#fff;
+.orange {
+  color: #FB4D3D;
 }

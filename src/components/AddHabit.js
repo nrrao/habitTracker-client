@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import HabitsContext from "./HabitsContext";
 import HabitsApiService from "../services/habits-api-service";
+import '../components/Login/Login.css'
 
 export default class AddHabit extends Component {
+  
   static contextType = HabitsContext;
   static defaultProps = {
     history: {
@@ -25,15 +27,24 @@ export default class AddHabit extends Component {
   };
   render() {
     console.log("inside addhabit component");
+    console.log(this.props)
     return (
+      <div>
       <form onSubmit={this.handleSubmit}>
-        <div>
+        
+        <div className="addHabit">
           <label htmlFor="addHabit_name">Habit Title</label>
-          <input required name="habit_name"></input>
-          <button type="submit">Add</button>
-          <button onClick={this.cancelAdd}>X</button>
-        </div>
+          <input aria-label='add__newHabit_name' className="addHabitInput" required name="habit_name"></input>
+          
+         
+          <button className="addButtonForm" type="submit">Add</button>
+          <button className="addButtonForm" onClick={()=>this.props.closePopUp()}>Cancel</button>
+         
+          </div> 
+        
       </form>
+      
+      </div>
     );
   }
 }
