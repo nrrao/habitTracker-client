@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "alias":"nandana-habittracker-app.now.sh",
+  "name": "habittracker-app",
+  "routes": [
+      {
+        "src": "^/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": ".*",
+        "dest": "/index.html"
+      }
+  ]
+}

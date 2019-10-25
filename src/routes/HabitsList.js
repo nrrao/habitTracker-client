@@ -34,7 +34,6 @@ export default class HabitsList extends Component {
     this.context.clearError();
     HabitsApiService.getHabitsList()
       .then(res => {
-        console.log(res)
         this.context.setHabitList(res);
       })
       .catch(this.context.setError);
@@ -42,7 +41,7 @@ export default class HabitsList extends Component {
 
   renderHabits() {
     const { habitList = [] } = this.context;
-    console.log(habitList);
+    
     return habitList.map((habit, idx) =>
       <Habits
         key={idx}
@@ -57,8 +56,8 @@ export default class HabitsList extends Component {
 
   render() {
     // const { error } = this.context
-    const dates =this.context.getDatesArray();
-    console.log('%%%%%%',dates)
+    
+    
     return (
       <section className="HabitListPage">
         {/* <h1>HabitList</h1>  */}
