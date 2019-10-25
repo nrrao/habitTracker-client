@@ -2,11 +2,11 @@
 
 See this app live at: https://nandana-habittracker-app.now.sh
 * Try this app
-*username:newuser
-*password:Newuser1!
+* username: newuser
+* password: Newuser1!
 
 ## 
-* What gets measured gets managed.
+* "What gets measured gets managed".
 * Build positvie habits or easily break bad habits by keeping track.
 * HabitTracker allows you to keep track of your habits every day and helps you achieve your goals.
 
