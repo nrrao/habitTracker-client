@@ -1,14 +1,16 @@
 # HabitTracker - Client
 
-See this app live at: https://nandana-habittracker-app.now.sh
-* Try this app
-* username: newuser
-* password: Newuser1!
+See this app live at: https://nandana-habittracker-app.now.sh<br/>
+Try this app<br/>
+Demo username: newuser<br/>
+Demo password: Newuser1!<br/>
+client Repo https://github.com/nrrao/habitTracker-client<br/>
+API Repo https://github.com/nrrao/habitTracker-server<br/>
 
-## 
-* "What gets measured gets managed".
-* Build positvie habits or easily break bad habits by keeping track.
-* HabitTracker allows you to keep track of your habits every day and helps you achieve your goals.
+### Why HabitTracker?
+"What gets measured gets managed".<br/>
+Build positvie habits or easily break bad habits by keeping track.<br/>
+HabitTracker allows you to keep track of your habits every day and helps you achieve your goals.<br/>
 
 ### Technologies Used
 
@@ -21,7 +23,7 @@ See this app live at: https://nandana-habittracker-app.now.sh
 * Users can see and edit the habits upto 5 days. 
 * Users have a visual reference of their goals and motivates them to be consistent. 
 
-## Sneak Peak of HabitTracker
+## ScreenShots
 
 ### Landing
 ![landingpage](https://user-images.githubusercontent.com/25930687/67575704-23de8f80-f70b-11e9-8c25-c4595567517c.png)
