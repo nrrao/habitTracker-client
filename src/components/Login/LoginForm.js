@@ -8,15 +8,17 @@ import './Login.css'
 export default class LoginForm extends Component {
 
   static contextType = HabitsContext;
-
+  
 static defaultProps = {
   onLoginSuccess: () => {}
 }
+state = { error: null }
+
 handleSubmitJwtAuth = (ev) =>{
     ev.preventDefault()
     const { user_name, password } = ev.target
 
-
+    
     AuthApiService.postLogin({
       user_name: user_name.value,
       password: password.value,
@@ -34,10 +36,14 @@ handleSubmitJwtAuth = (ev) =>{
       })
   }
   render() {
+    const { error } = this.state
     return (
       
         
       <form onSubmit={this.handleSubmitJwtAuth}>
+              <div role='alert'>
+          {error && <p className='red'>{error}</p>}
+        </div>
         <h2>Enter Username and Password to Login</h2>
         <ul className="wrapper">
         

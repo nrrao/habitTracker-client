@@ -55,7 +55,7 @@ export default class Habits extends Component {
         
 
          <div className="ulHabitlist">
-         <input className="  text input" aria-label='update_habit_title'  ref='habitTitle' type="text" defaultValue={title}/>
+         <input className="  text inputTitle" aria-label='update_habit_title'  ref='habitTitle' type="text" defaultValue={title}/>
          <li className="date ">{dates[0].format('ddd D')}</li>
         <li className="date ">{dates[1].format('ddd D')}</li>
         <li className="date ">{dates[2].format('ddd D')}</li>

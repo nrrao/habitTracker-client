@@ -26,8 +26,7 @@ export default class AddHabit extends Component {
   };
 
   render() {
-    console.log("inside addhabit component");
-    console.log(this.props)
+    
     return (
       <div>
       <form className="addHabitDiv" onSubmit={this.handleSubmit}>
