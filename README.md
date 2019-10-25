@@ -1,6 +1,6 @@
 # HabitTracker - Client
 
-See this app live at:
+See this app live at: https://nandana-habittracker-app.now.sh
 
 ## 
 * What gets measured gets managed.
