@@ -3,7 +3,7 @@ import HabitsContext from "../components/HabitsContext";
 import HabitsApiService from "../services/habits-api-service";
 import Habits from "../components/Habits/Habits";
 import '../components/Habits/Habit.css'
-import AddHabit from "../components/AddHabit";
+import AddHabit from "../components/AddHabit/AddHabit";
 
 export default class HabitsList extends Component {
   static contextType = HabitsContext;
@@ -13,12 +13,10 @@ export default class HabitsList extends Component {
     this.state = { showPopup: false };  
     }  
 
-    togglePopup=() =>{
+    // togglePopup=() =>{
       
-      this.setState({  
-           showPopup: !this.state.showPopup  
-      });  
-       }  
+    //  this.context.togglePopup 
+    //    }  
 
   static defaultProps = {
     history: {
@@ -65,8 +63,8 @@ export default class HabitsList extends Component {
       <section className="HabitListPage">
         {/* <h1>HabitList</h1>  */}
         <div className="addNewHabitButtonDiv">
-        <button className="addButton" onClick={()=>this.togglePopup()}> Add NewHabit</button>  
-        {this.state.showPopup ? <AddHabit closePopUp={()=>this.togglePopup()}/>:null}
+        <button className="addButton" onClick={()=>this.context.togglePopup()}> Add NewHabit</button>  
+        {this.context.showPopup ? <AddHabit/>:null}
         </div>
         {this.renderHabits()}
       </section>

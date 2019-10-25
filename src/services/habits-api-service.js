@@ -14,6 +14,9 @@ const HabitsApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+      .catch(error=>{
+        console.error({error})
+      })
   },
 
   postHabit(habitTitle) {
@@ -32,6 +35,9 @@ const HabitsApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+      .catch(error=>{
+        console.error({error})
+      })
   },
 
   updateHabit(habitTitle,habitId,percentArr,dateIdArr,dates){ 
@@ -40,7 +46,7 @@ const HabitsApiService = {
       'habit_title': habitTitle,
       'dates' : []
     };
-    console.log(percentArr, dateIdArr);
+    
     dateIdArr.forEach( (id, idx) => {
       obj.dates.push( {'date_id' : id,'percentage':parseInt(percentArr[idx]),'date_added':dates[idx]} );
     });
@@ -60,6 +66,9 @@ const HabitsApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+      .catch(error=>{
+        console.error({error})
+      })
   },
 
   deleteHabit(habitId){
@@ -70,14 +79,15 @@ const HabitsApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       }
     })
-    .then(res => res.json())
-    /*
-
-    .then(res => {
-      console.log(res.json());
-      return res.json();
-    })
-    */
+    .then(res =>
+      (!res.ok)
+      ? res.json().then(e => Promise.reject(e))
+      : res.json()
+  )
+  .catch(error=>{
+    console.error({error})
+  }) 
+   
   
 
 }

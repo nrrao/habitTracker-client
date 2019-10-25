@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import HabitsContext from "./HabitsContext";
-import HabitsApiService from "../services/habits-api-service";
-import '../components/Login/Login.css'
+import HabitsContext from "../HabitsContext";
+import HabitsApiService from "../../services/habits-api-service";
+import '../Login/Login.css'
 
 export default class AddHabit extends Component {
   
@@ -12,19 +12,19 @@ export default class AddHabit extends Component {
     }
   };
 
-  cancelAdd=()=>{
-    this.props.history.push("/habits")
-  }
+ 
   
   handleSubmit = e => {
     e.preventDefault();
     const { habit_name } = e.target;
-console.log('********^^^^^^^^',habit_name.value)
     HabitsApiService.postHabit(habit_name.value)
-    .then(res=>this.context.setHabitList(res))
-    .then(this.props.history.push('/habits'))
+    .then(res=>{
+      habit_name.value = ''
+      this.context.setHabitList(res)})
+    .then(this.context.togglePopup())
       .catch(this.context.setError);
   };
+
   render() {
     console.log("inside addhabit component");
     console.log(this.props)
@@ -38,7 +38,7 @@ console.log('********^^^^^^^^',habit_name.value)
           
          
           <button className="addButtonForm" type="submit">Add</button>
-          <button className="addButtonForm" onClick={()=>this.props.closePopUp()}>Cancel</button>
+          <button className="addButtonForm" onClick={()=>this.context.togglePopup()}>Cancel</button>
          
           
         

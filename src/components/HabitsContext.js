@@ -6,12 +6,14 @@ const HabitsContext = React.createContext({
   habitList:[],
   error: null,
   isLoggedIn: false,
+  showPopup: false,
   setError: () => {},
   clearError: () => {},
   setHabitList:()=>{},
   editHabit:()=>{},
   getDatesArray:()=>{},
-  handleMissingValues:()=>{}
+  handleMissingValues:()=>{},
+  togglePopup:()=>{}
 })
 
 export default HabitsContext
@@ -21,13 +23,21 @@ export  class HabitsContextProvider extends Component {
   state ={
     habitList:[],
     error:null,
-    isLoggedIn: false
+    isLoggedIn: false,
+    showPopup:false
   };
 
   
   refreshLoginState = () => {
     this.setState({ isLoggedIn:TokenService.hasAuthToken() });
   };
+
+  togglePopup=() =>{
+      
+    this.setState({  
+         showPopup: !this.state.showPopup  
+    });  
+     }  
 
   setError = error => {
     console.error(error)
@@ -102,6 +112,8 @@ export  class HabitsContextProvider extends Component {
       error: this.state.error,
       isLoggedIn: this.state.isLoggedIn,
       refreshLoginState: this.refreshLoginState,
+      showPopup:this.state.showPopup,
+      togglePopup:this.togglePopup,
       setError: this.setError,
       clearError: this.clearError,
       setHabitList:this.setHabitList,

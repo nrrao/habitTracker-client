@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import AuthApiService from '../services/auth-api-service'
-import './Login/Login.css';
+import AuthApiService from '../../services/auth-api-service'
+import '../Login/Login.css';
 
-export default class RegistrationForm extends Component {
+export default class SignUpForm extends Component {
   static defaultProps = {
     onSignUpSuccess: () => {}
   }

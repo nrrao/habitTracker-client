@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './Login/Login.css'
-import HabitsContext from './HabitsContext';
+import '../Login/Login.css'
+import HabitsContext from '../HabitsContext';
 
 export default class HomePage extends Component {
   static contextType = HabitsContext;
