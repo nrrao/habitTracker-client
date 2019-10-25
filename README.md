@@ -23,8 +23,12 @@ See this app live at:
 ### Landing
 ![landingpage](https://user-images.githubusercontent.com/25930687/67575704-23de8f80-f70b-11e9-8c25-c4595567517c.png)
 ### Login
+![Login](https://user-images.githubusercontent.com/25930687/67593170-8ea1c200-f72f-11e9-8471-7c73c556be73.png)
 ### SignUp
-### HasbitList 
+![signup](https://user-images.githubusercontent.com/25930687/67593208-a9743680-f72f-11e9-9a8b-404123370558.png)
+### HasbitList
+![HabitList](https://user-images.githubusercontent.com/25930687/67593228-b98c1600-f72f-11e9-911a-e6bad299ebe0.png)
 ### Add NewHabit
+![AddHabit](https://user-images.githubusercontent.com/25930687/67593251-c7da3200-f72f-11e9-8dc9-c0142195bdb8.png)
 ### Edit Mode
-
+![Editmode](https://user-images.githubusercontent.com/25930687/67593287-de808900-f72f-11e9-9854-0855185eed97.png)
