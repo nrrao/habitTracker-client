@@ -27,7 +27,7 @@ See this app live at:
 ### SignUp
 ![signup](https://user-images.githubusercontent.com/25930687/67593208-a9743680-f72f-11e9-9a8b-404123370558.png)
 ### HasbitList
-![HabitList](https://user-images.githubusercontent.com/25930687/67593228-b98c1600-f72f-11e9-911a-e6bad299ebe0.png)
+![Habitlist](https://user-images.githubusercontent.com/25930687/67593522-4e8f0f00-f730-11e9-8c49-d68e160fdd6a.png)
 ### Add NewHabit
 ![AddHabit](https://user-images.githubusercontent.com/25930687/67593251-c7da3200-f72f-11e9-8dc9-c0142195bdb8.png)
 ### Edit Mode
