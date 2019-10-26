@@ -38,16 +38,19 @@ handleSubmitJwtAuth = (ev) =>{
   render() {
     const { error } = this.state
     return (
-      
-        
+  
       <form onSubmit={this.handleSubmitJwtAuth}>
               <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
+      
         <h2>Enter Username and Password to Login</h2>
+        <p className="demo">Demo username:newuser</p>
+        <p className="demo">Demo password:Newuser1!</p>
         <ul className="wrapper">
         
         <li className="form-row">
+        
         <label htmlFor='LoginForm__user_name'>
             Username
           </label>
@@ -69,6 +72,7 @@ handleSubmitJwtAuth = (ev) =>{
             id='LoginForm__password' className="input">
           </input>
         </li>
+        
         <li className="form-row">
         <button className="button" type='submit'>
           Login

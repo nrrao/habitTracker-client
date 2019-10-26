@@ -6,7 +6,7 @@ const HabitsApiService = {
   getHabitsList() {
     return fetch(`${config.API_ENDPOINT}/habits`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`, 
       },
     })
     .then(res =>  

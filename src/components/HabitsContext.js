@@ -5,7 +5,7 @@ import moment from 'moment';
 const HabitsContext = React.createContext({
   habitList:[],
   error: null,
-  isLoggedIn: false,
+  isLoggedIn: false,   
   showPopup: false,
   setError: () => {},
   clearError: () => {},
@@ -97,7 +97,7 @@ export  class HabitsContextProvider extends Component {
   }
   
   setHabitList = habitList => {
-    console.log("~~~~~~~~", habitList)
+    
     habitList = this.handleMissingValues(habitList)
     this.setState({ habitList })
   }

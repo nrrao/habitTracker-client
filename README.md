@@ -1,9 +1,22 @@
-# HabitTracker - Client
+#### Front-End * registjs * JavaScript * HTML5 * CSS3
 
-See this app live at:
+### Usage
 
-## 
-* What gets measured gets managed.
+* Users * What gets measured gets managed.
+* Build positvie habits or easily break bad habits by keeping track.
+* HabitTracker allows you to keep track of your habits every day and helps you achieve your goals.
+
+### Technologies Used
+
+er to the application with a unique username and password 
+* Users can add Habits and enter the percentage of completion everyday.
+* Users can see and edit the habits upto 5 days. 
+* Users isual reference of their goals and motivates them to be consistent. 
+
+## Sneak Peak of HabitTracker
+
+###ding
+![landingpage](https://user-im* What gets measured gets managed.
 * Build positvie habits or easily break bad habits by keeping track.
 * HabitTracker allows you to keep track of your habits every day and helps you achieve your goals.
 
@@ -21,4 +34,4 @@ See this app live at:
 ## Sneak Peak of HabitTracker
 
 ### Landing
-![landingpage](https://user-images.githubusercontent.com/25930687/67575704-23de8f80-f70b-11e9-8c25-c4595567517c.png)
+![landingpage](https://user-im
