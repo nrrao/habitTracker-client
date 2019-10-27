@@ -26,9 +26,7 @@ HabitTracker allows you to keep track of your habits every day and helps you ach
 
 ## ScreenShots
 
-### Landing
-![landingpage](https://user-im
-=======
+## Landing
 ![landingpage](https://user-images.githubusercontent.com/25930687/67575704-23de8f80-f70b-11e9-8c25-c4595567517c.png)
 ### Login
 ![Login](https://user-images.githubusercontent.com/25930687/67593170-8ea1c200-f72f-11e9-8471-7c73c556be73.png)
@@ -40,4 +38,4 @@ HabitTracker allows you to keep track of your habits every day and helps you ach
 ![AddHabit](https://user-images.githubusercontent.com/25930687/67593251-c7da3200-f72f-11e9-8dc9-c0142195bdb8.png)
 ### Edit Mode
 ![Editmode](https://user-images.githubusercontent.com/25930687/67593287-de808900-f72f-11e9-9854-0855185eed97.png)
->>>>>>> 56910da68be6214855a5d727bf606a2c46a8e0c7
+
