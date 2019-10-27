@@ -1,11 +1,18 @@
 {
   "version": 2,
-  "alias":"nandana-habittracker-app.now.sh",
+  "alias":"nandana-habittracker-app",
   "name": "habittracker-app",
+
   "routes": [
       {
         "src": "^/static/(.*)",
         "dest": "/static/$1"
+      },
+      { "src": "/favicon.ico", "dest": "/favicon.ico" },
+      { "src": "/manifest.json", "dest": "/manifest.json" },
+      {
+        "src": "/service-worker.js",
+        "dest": "/service-worker.js"
       },
       {
         "src": ".*",
