@@ -9,7 +9,7 @@
 
 .Header h1 {
 	margin:0;
-	padding-top: 5px;
+	padding-top: 3px;
 	padding-left: 20px;
 }
 
@@ -46,7 +46,8 @@
 
 @media screen and (min-width: 450px) {
   .Header {
-    align-items: baseline;
+		align-items: baseline;
+		
   }
   .Header h1 {
     font-size: 22pt;
@@ -54,11 +55,15 @@
 
   .Header__not-logged-in   {
 		flex-direction: row;
-		padding-bottom:20px;
+		padding-bottom:40px;
 	}
 	.Header__logged-in{
 		flex-direction: row;
-		padding-bottom:20px;
+		padding-bottom:40px;
+	}
+	.Header a{
+		
+		padding-bottom: 20px;
 	}
 
    .hyph {
