@@ -51,7 +51,7 @@ const HabitsApiService = {
       obj.dates.push( {'date_id' : id,'percentage':parseInt(percentArr[idx]),'date_added':dates[idx]} );
     });
 
-    console.log(JSON.stringify(obj));
+    
 
     return fetch(`${config.API_ENDPOINT}/habits`, {
       method: 'PATCH',
