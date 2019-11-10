@@ -51,9 +51,7 @@ const HabitsApiService = {
       obj.dates.push( {'date_id' : id,'percentage':parseInt(percentArr[idx]),'date_added':dates[idx]} );
     });
 
-    
-
-    return fetch(`${config.API_ENDPOINT}/habits`, {
+      return fetch(`${config.API_ENDPOINT}/habits`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
@@ -61,10 +59,11 @@ const HabitsApiService = {
       },
       body: JSON.stringify(obj)
     })
-      .then(res =>
+      .then(res => 
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
+      
       )
       .catch(error=>{
         console.error({error})

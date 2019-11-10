@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TokenService from "../services/token-service";
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 const HabitsContext = React.createContext({
   habitList:[],
@@ -50,12 +50,12 @@ export  class HabitsContextProvider extends Component {
 
   getDatesArray = () => {
     const dates = [
-      moment(),
-      moment().subtract(1,'days'),
-      moment().subtract(2,'days'),
-      moment().subtract(3,'days'),
-      moment().subtract(4,'days'),
-    ];
+      moment.tz('America/New_York'),
+      moment.tz('America/New_York').subtract(1,'days'),
+      moment.tz('America/New_York').subtract(2,'days'),
+      moment.tz('America/New_York').subtract(3,'days'),
+      moment.tz('America/New_York').subtract(4,'days'),
+    ]
     return dates;
   }
 
@@ -72,7 +72,7 @@ export  class HabitsContextProvider extends Component {
         let dateToBeAdded = null;
   
         habit.dates.forEach((hd) => {
-          if (date.format('YYYY-MM-DD') === moment(hd.date_added).format('YYYY-MM-DD')) {
+          if (date.format('YYYY-MM-DD') === moment(hd.date_added).tz('America/New_York').format('YYYY-MM-DD')) {
             dateFound = true;
           }
         })

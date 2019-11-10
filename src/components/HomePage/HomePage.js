@@ -43,7 +43,7 @@ export default class HomePage1 extends Component {
 </div>
 
 <div className="warning colorList">
-  <p><strong> Have a visual refernce and get motivated to be consistent.</strong></p>
+  <p><strong> Have a visual reference and get motivated to be consistent.</strong></p>
 </div>
 
       </div>
@@ -77,7 +77,7 @@ export default class HomePage1 extends Component {
 </div>
 
 <div className="warning colorList">
-  <p><strong> Have a visual refernce and get motivated to be consistent.</strong></p>
+  <p><strong> Have a visual reference and get motivated to be consistent.</strong></p>
 </div>
 
       </div>

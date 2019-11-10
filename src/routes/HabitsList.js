@@ -13,11 +13,6 @@ export default class HabitsList extends Component {
     this.state = { showPopup: false };  
     }  
 
-    // togglePopup=() =>{
-      
-    //  this.context.togglePopup 
-    //    }  
-
   static defaultProps = {
     history: {
       push: () => {}
@@ -41,7 +36,6 @@ export default class HabitsList extends Component {
 
   renderHabits() {
     const { habitList = [] } = this.context;
-    
     return habitList.map((habit, idx) =>
       <Habits
         key={idx}
