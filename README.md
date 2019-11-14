@@ -9,7 +9,7 @@ API Repo https://github.com/nrrao/habitTracker-server<br/>
 
 ### Why HabitTracker?
 "What gets measured gets managed".<br/>
-Build positvie habits or easily break bad habits by keeping track.<br/>
+Build positive habits or easily break bad habits by keeping track.<br/>
 HabitTracker allows you to keep track of your habits every day and helps you achieve your goals.<br/>
 
 ### Technologies Used
