@@ -62,7 +62,9 @@ export default class Habits extends Component {
         <li className="date ">{dates[2].format('ddd D')}</li>
         <li className="date ">{dates[3].format('ddd D')}</li>
         <li className="date ">{dates[4].format('ddd D')}</li>
-        <input className="percentage" aria-label='update_percentage-1' ref='percentage0' type="number" min="0" max="100" defaultValue={percentage[0]}/>
+        <li className="pLable">Enter Percentage of completion</li>
+        
+        <input className="percentage" aria-label='update_percentage-1' ref='percentage0' type="number" min="0" max="100" defaultValue={percentage[0]} />
         <input className="percentage" aria-label='update_percentage-2'  ref='percentage1' type="number" min="0" max="100" defaultValue={percentage[1]}/>
         <input className="percentage" aria-label='update_percentage-3'  ref='percentage2' type="number" min="0" max="100" defaultValue={percentage[2]}/>
         <input className="percentage" aria-label='update_percentage-4'  ref='percentage3' type="number" min="0" max="100" defaultValue={percentage[3]}/>
