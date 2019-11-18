@@ -56,7 +56,7 @@ export default class SignUpForm extends Component {
             ></input>
           </li>
           <li className="form-row">
-            <button type="submit">SignUp</button>
+            <button type="submit">Sign Up</button>
           </li>
         </ul>
       </form>
