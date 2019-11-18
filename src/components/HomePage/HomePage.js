@@ -59,21 +59,21 @@ export default class HomePage1 extends Component {
           <h2 >Build positive habits or easily break bad habits</h2>
         </header>
         <div className="buttonContainer">
-          <button className="homepagebutton" onClick={this.showSignUp}>SignUp</button>
+          <button className="homepagebutton" onClick={this.showSignUp}>Sign Up</button>
           
-          <button className="homepagebutton" onClick={this.showLogin}>Login</button>
+          <button className="homepagebutton" onClick={this.showLogin}>Log In</button>
         </div>
        
         <div className="danger colorList">
-  <p><strong>HabitTracker helps you to track habits everyday</strong></p>
+  <p><strong>HabitTracker helps you to track habits everyday.</strong></p>
 </div>
 
 <div className="success colorList">
-  <p><strong>Add new habit</strong></p>
+  <p><strong>Add new habit.</strong></p>
 </div>
 
 <div className="info colorList">
-  <p><strong>Update habits and percentage of completion upto 5 days</strong></p>
+  <p><strong>Update habits and percentage of completion up to 5 days.</strong></p>
 </div>
 
 <div className="warning colorList">

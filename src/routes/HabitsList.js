@@ -56,7 +56,7 @@ export default class HabitsList extends Component {
       <section className="HabitListPage">
         {/* <h1>HabitList</h1>  */}
         <div className="addNewHabitButtonDiv">
-        <button className="addButton" onClick={()=>this.context.togglePopup()}> Add NewHabit</button>  
+        <button className="addButton" onClick={()=>this.context.togglePopup()}> Add New Habit</button>  
         {this.context.showPopup ? <AddHabit/>:null}
         </div>
         {this.renderHabits()}

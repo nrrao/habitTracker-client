@@ -38,10 +38,10 @@ export default class Header extends Component {
         <Link to="/">Habit Tracker</Link>
       </h1>
       <div className="Header__not-logged-in">
-        <Link to="/signup">SignUp</Link>
+        <Link to="/signup">Sign Up</Link>
         <span className="hyph"></span>
         <span className="hyph"></span>
-        <Link to="/login">Log in</Link>
+        <Link to="/login">Log In</Link>
       </div>
       </nav>
     );
