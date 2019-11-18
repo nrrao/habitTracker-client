@@ -75,7 +75,7 @@ handleSubmitJwtAuth = (ev) =>{
         
         <li className="form-row">
         <button className="button" type='submit'>
-          Login
+          Log In
         </button>
         </li>
         </ul>
