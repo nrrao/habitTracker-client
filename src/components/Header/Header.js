@@ -24,7 +24,7 @@ export default class Header extends Component {
         <span className="hyph"></span>
         <span className="hyph"></span>
         <Link onClick={this.handleLogoutClick} to="/">
-          Logout
+          Log Out
         </Link>
       </div>
       </div>
