@@ -44,7 +44,7 @@ handleSubmitJwtAuth = (ev) =>{
           {error && <p className='red'>{error}</p>}
         </div>
       
-        <h2>Enter Username and Password to Login</h2>
+        <h2>Enter Username and Password to Log in</h2>
         <p className="demo">Demo username:newuser</p>
         <p className="demo">Demo password:Newuser1!</p>
         <ul className="wrapper">
